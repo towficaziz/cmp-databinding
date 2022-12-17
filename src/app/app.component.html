@@ -6,7 +6,7 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <button class="btn btn-primary" (click)="onChangeFirst()">Change first Element</button>
+      <button class="btn btn-primary"  style="margin-right: 10px;" (click)="onChangeFirst()">Change first Element</button>
       <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy First Component</button>
       <app-server-element
       *ngFor="let serverElement of serverElements"
@@ -17,6 +17,19 @@
         <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
       </p>
     </app-server-element>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
+      <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
     </div>
   </div>
 </div>
